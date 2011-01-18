@@ -1,0 +1,13 @@
+one:
+  created_by: 1
+  title: MyString
+  article: MyText
+  upvotes: 1
+  downvotes: 1
+
+two:
+  created_by: 1
+  title: MyString
+  article: MyText
+  upvotes: 1
+  downvotes: 1
