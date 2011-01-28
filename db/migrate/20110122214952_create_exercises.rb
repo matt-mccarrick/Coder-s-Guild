@@ -1,7 +1,7 @@
 class CreateExercises < ActiveRecord::Migration
   def self.up
     create_table :exercises do |t|
-      t.string :created_by
+      t.integer :created_by
       t.string :section
       t.string :title
       t.text :article

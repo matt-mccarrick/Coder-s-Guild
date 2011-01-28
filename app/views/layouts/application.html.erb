@@ -18,7 +18,7 @@
 					<li>
 						
 						<%=link_to "Home", :controller => "home"%>
-					</li>
+                    </li>
 					<li>
 						<%=link_to "Tutorials" , tutorials_path%>
 					</li>
@@ -34,7 +34,8 @@
 				<%= content_tag :h1, yield(:title) if show_title? %>
 				<%= yield %>
 			</div>
-	      </div>
-    
+            <div id="footer">
+            </div>
+	    </div>
 	</body>
 </html>

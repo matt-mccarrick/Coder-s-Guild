@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(:version => 20110122214952) do
 
   create_table "exercises", :force => true do |t|
-    t.string   "created_by"
+    t.integer  "created_by"
     t.string   "section"
     t.string   "title"
     t.text     "article"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20110122214952) do
 
   create_table "tutorials", :force => true do |t|
     t.integer  "created_by"
+    t.string   "section"
     t.string   "title"
     t.text     "article"
     t.integer  "upvotes"

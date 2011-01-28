@@ -2,6 +2,7 @@ class CreateTutorials < ActiveRecord::Migration
   def self.up
     create_table :tutorials do |t|
       t.integer :created_by
+      t.string :section
       t.string :title
       t.text :article
       t.integer :upvotes
