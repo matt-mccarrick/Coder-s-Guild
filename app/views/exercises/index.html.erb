@@ -1,0 +1,27 @@
+<% title "Exercises" %>
+
+<table>
+  <tr>
+    <th>Created By</th>
+    <th>Section</th>
+    <th>Title</th>
+    <th>Article</th>
+    <th>Upvotes</th>
+    <th>Downvotes</th>
+  </tr>
+  <% for exercise in @exercises %>
+    <tr>
+      <td><%= exercise.created_by %></td>
+      <td><%= exercise.section %></td>
+      <td><%= exercise.title %></td>
+      <td><%= exercise.article %></td>
+      <td><%= exercise.upvotes %></td>
+      <td><%= exercise.downvotes %></td>
+      <td><%= link_to "Show", exercise %></td>
+      <td><%= link_to "Edit", edit_exercise_path(exercise) %></td>
+      <td><%= link_to "Destroy", exercise, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Exercise", new_exercise_path(exercise) %></p>

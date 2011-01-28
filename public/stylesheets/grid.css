@@ -10,6 +10,7 @@
 /* Containers
 ----------------------------------------------------------------------------------------------------*/
 .container-12 {
+	position:relative;
 	margin-left: auto;
 	margin-right: auto;
 	width: 960px;

@@ -1,0 +1,15 @@
+one:
+  created_by: MyString
+  section: MyString
+  title: MyString
+  article: MyText
+  upvotes: 1
+  downvotes: 1
+
+two:
+  created_by: MyString
+  section: MyString
+  title: MyString
+  article: MyText
+  upvotes: 1
+  downvotes: 1

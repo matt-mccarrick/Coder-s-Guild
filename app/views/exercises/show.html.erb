@@ -1,0 +1,32 @@
+<% title "Exercise" %>
+
+<p>
+  <strong>Created By:</strong>
+  <%= @exercise.created_by %>
+</p>
+<p>
+  <strong>Section:</strong>
+  <%= @exercise.section %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @exercise.title %>
+</p>
+<p>
+  <strong>Article:</strong>
+  <%= @exercise.article %>
+</p>
+<p>
+  <strong>Upvotes:</strong>
+  <%= @exercise.upvotes %>
+</p>
+<p>
+  <strong>Downvotes:</strong>
+  <%= @exercise.downvotes %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_exercise_path(@exercise) %> |
+  <%= link_to "Destroy", @exercise, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", exercises_path %>
+</p>

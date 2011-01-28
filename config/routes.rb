@@ -1,4 +1,6 @@
 CodersGuild::Application.routes.draw do
+  resources :exercises
+
   resources :tutorials
 
   # The priority is based upon order of creation:
