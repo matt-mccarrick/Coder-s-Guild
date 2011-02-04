@@ -5,8 +5,8 @@ class CreateTutorials < ActiveRecord::Migration
       t.string :section
       t.string :title
       t.text :article
-      t.integer :upvotes
-      t.integer :downvotes
+      t.integer :upvotes, :default => 0
+      t.integer :downvotes, :default => 0
       t.timestamps
     end
   end

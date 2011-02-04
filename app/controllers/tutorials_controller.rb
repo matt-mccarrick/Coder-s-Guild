@@ -14,6 +14,7 @@ class TutorialsController < ApplicationController
   def create
     @tutorial = Tutorial.new(params[:tutorial])
     @tutorial.created_by = 1;
+
     if @tutorial.save
       flash[:notice] = "Successfully created tutorial."
       redirect_to @tutorial
