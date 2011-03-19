@@ -30,3 +30,4 @@ gem 'nifty-generators', '>=0.4.0'
 #   gem 'webrat'
 # end
 gem "mocha", :group => :test
+gem "devise"
