@@ -67,7 +67,10 @@ ul#menu{
 	background-color: #FCC;
 	border: solid 1px #C66;
 }
-
+.right{
+	float:right !important;
+	clear:both;
+}
 .fieldWithErrors {
 	display: inline;
 }

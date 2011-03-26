@@ -12,9 +12,18 @@
 	</head>
 	<body>
 		<div id="body" class="container-12">
+			<div id="userControl" class="right grid-2">
+				<%if ! current_user.nil?%>
+					<p><%=current_user.email%></p>
+				<%else%>
+					<%=link_to "Sign In", url_for(:controller => 'devise/sessions', :action => 'new')%>
+				<%end%>
+			</div>
+			
 			<div id="header" class="grid-8 push-2 clearfix">
 				<h1>The Coder's Guild;</h1>
 			</div>
+			
 			<div id="nav" class="grid-2">
 				<%= render('layouts/nav')%>
 

@@ -1,4 +1,5 @@
 class TutorialsController < ApplicationController
+	before_filter :authenticate_user!, :except => [:show, :index]
   def index
     @tutorials = Tutorial.all
   end

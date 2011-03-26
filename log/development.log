@@ -576,3 +576,1372 @@ Migrating to DeviseCreateUsers (20110312033526)
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTutorials (20110118023519)
+Migrating to CreateExercises (20110122214952)
+Migrating to DeviseCreateUsers (20110312033526)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("exercises")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tutorials")[0m
+  [1m[35mSQL (1.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:42:10 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.3ms)
+Rendered layouts/_nav.html.erb (11.1ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (33.7ms)
+Completed   in 48ms
+
+ActionView::Template::Error (No route matches {:controller=>"devise/home"}):
+    2: <ul id="#menu">
+    3: 	<li>
+    4: 		
+    5: 		<%=link_to "Home", :controller => "home"%>
+    6: 	</li>
+    7: 	<li>
+    8: 		<%=link_to "Tutorials" , tutorials_path%>
+  app/views/layouts/_nav.html.erb:5:in `_app_views_layouts__nav_html_erb___2776504502483988745_17619000_3821545311374943165'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb___3814066237864073386_6534720_2241896291255657602'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (44.5ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (48.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:42:36 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 38ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:49:54 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+ERROR: compiling _app_views_layouts_application_html_erb___3814066237864073386_15384840_2241896291255657602 RAISED /home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...ppend= (link_to, :controller => 'devise/sessions', :action =...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting ')'
+...ontroller => 'devise/sessions', :action => 'new');@output_bu...
+...                               ^
+Function body:           def _app_views_layouts_application_html_erb___3814066237864073386_15384840_2241896291255657602(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+	<head>
+		<title>');@output_buffer.append= ( content_for?(:title) ? yield(:title) : "Coder's Guild" );@output_buffer.safe_concat('</title>
+		');@output_buffer.append= ( stylesheet_link_tag "application" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( stylesheet_link_tag "grid");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "nav.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( yield(:head) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	</head>
+	<body>
+		<div id="body" class="container-12">
+			<div id="header" class="grid-8 push-2 clearfix">
+				<h1>The Coder\'s Guild;</h1>
+			</div>
+			<div id="userControl" class="right grid-2">
+');				if !nil? current_user
+@output_buffer.safe_concat('					<p>');@output_buffer.append= (current_user.UserName);@output_buffer.safe_concat('</p>
+');				else
+@output_buffer.safe_concat('					');@output_buffer.append= (link_to, :controller => 'devise/sessions', :action => 'new');@output_buffer.safe_concat('
+');				end
+@output_buffer.safe_concat('			</div>
+			<div id="nav" class="grid-2">
+				');@output_buffer.append= ( render('layouts/nav'));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			</div>
+			<div id="content" class="grid-8">
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :div, msg, :id => "flash_#{name}" );@output_buffer.safe_concat('
+');				 end 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :h1, yield(:title) if show_title? );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			</div>
+			
+            <div id="footer">
+            </div>
+	    </div>
+	</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/lib/devise/controllers/scoped_views.rb:30:in `render_with_scope'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/controllers/devise/sessions_controller.rb:8:in `new'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__2428364963287125932__process_action__1504564461480665762__callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/mapper.rb:35:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed   in 22ms
+
+ActionView::Template::Error (/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...ppend= (link_to, :controller => 'devise/sessions', :action =...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting ')'
+...ontroller => 'devise/sessions', :action => 'new');@output_bu...
+...                               ^):
+    19: 				<%if !nil? current_user%>
+    20: 					<p><%=current_user.UserName%></p>
+    21: 				<%else%>
+    22: 					<%=link_to, :controller => 'devise/sessions', :action => 'new'%>
+    23: 				<%end%>
+    24: 			</div>
+    25: 			<div id="nav" class="grid-2">
+  
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (47.2ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (63.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:51:20 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+ERROR: compiling _app_views_layouts_application_html_erb___3814066237864073386_15512920_2241896291255657602 RAISED /home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting tCOLON2 or '[' or '.'
+...end= (link_to, "SignIn/SignUp", url_for :controller => 'devi...
+...                               ^
+Function body:           def _app_views_layouts_application_html_erb___3814066237864073386_15512920_2241896291255657602(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+	<head>
+		<title>');@output_buffer.append= ( content_for?(:title) ? yield(:title) : "Coder's Guild" );@output_buffer.safe_concat('</title>
+		');@output_buffer.append= ( stylesheet_link_tag "application" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( stylesheet_link_tag "grid");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "nav.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( yield(:head) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	</head>
+	<body>
+		<div id="body" class="container-12">
+			<div id="header" class="grid-8 push-2 clearfix">
+				<h1>The Coder\'s Guild;</h1>
+			</div>
+			<div id="userControl" class="right grid-2">
+');				if !nil? current_user
+@output_buffer.safe_concat('					<p>');@output_buffer.append= (current_user.UserName);@output_buffer.safe_concat('</p>
+');				else
+@output_buffer.safe_concat('					');@output_buffer.append= (link_to, "SignIn/SignUp", url_for :controller => 'devise/sessions', :action => 'new');@output_buffer.safe_concat('
+');				end
+@output_buffer.safe_concat('			</div>
+			<div id="nav" class="grid-2">
+				');@output_buffer.append= ( render('layouts/nav'));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			</div>
+			<div id="content" class="grid-8">
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :div, msg, :id => "flash_#{name}" );@output_buffer.safe_concat('
+');				 end 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :h1, yield(:title) if show_title? );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			</div>
+			
+            <div id="footer">
+            </div>
+	    </div>
+	</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/lib/devise/controllers/scoped_views.rb:30:in `render_with_scope'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/controllers/devise/sessions_controller.rb:8:in `new'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__2428364963287125932__process_action__1504564461480665762__callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/mapper.rb:35:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (4.9ms)
+Completed   in 22ms
+
+ActionView::Template::Error (/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting tCOLON2 or '[' or '.'
+...end= (link_to, "SignIn/SignUp", url_for :controller => 'devi...
+...                               ^):
+    19: 				<%if !nil? current_user%>
+    20: 					<p><%=current_user.UserName%></p>
+    21: 				<%else%>
+    22: 					<%=link_to, "SignIn/SignUp", url_for :controller => 'devise/sessions', :action => 'new'%>
+    23: 				<%end%>
+    24: 			</div>
+    25: 			<div id="nav" class="grid-2">
+  
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (46.4ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (49.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:51:33 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+ERROR: compiling _app_views_layouts_application_html_erb___3814066237864073386_15533540_2241896291255657602 RAISED /home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...k_to "SignIn/SignUp", url_for :controller => 'devise/session...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting ')'
+...ontroller => 'devise/sessions', :action => 'new');@output_bu...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected keyword_do_block, expecting keyword_end
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				              ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected '|', expecting '='
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				                          ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_layouts_application_html_erb___3814066237864073386_15533540_2241896291255657602(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+	<head>
+		<title>');@output_buffer.append= ( content_for?(:title) ? yield(:title) : "Coder's Guild" );@output_buffer.safe_concat('</title>
+		');@output_buffer.append= ( stylesheet_link_tag "application" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( stylesheet_link_tag "grid");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "nav.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( yield(:head) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	</head>
+	<body>
+		<div id="body" class="container-12">
+			<div id="header" class="grid-8 push-2 clearfix">
+				<h1>The Coder\'s Guild;</h1>
+			</div>
+			<div id="userControl" class="right grid-2">
+');				if !nil? current_user
+@output_buffer.safe_concat('					<p>');@output_buffer.append= (current_user.UserName);@output_buffer.safe_concat('</p>
+');				else
+@output_buffer.safe_concat('					');@output_buffer.append= (link_to "SignIn/SignUp", url_for :controller => 'devise/sessions', :action => 'new');@output_buffer.safe_concat('
+');				end
+@output_buffer.safe_concat('			</div>
+			<div id="nav" class="grid-2">
+				');@output_buffer.append= ( render('layouts/nav'));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			</div>
+			<div id="content" class="grid-8">
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :div, msg, :id => "flash_#{name}" );@output_buffer.safe_concat('
+');				 end 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :h1, yield(:title) if show_title? );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			</div>
+			
+            <div id="footer">
+            </div>
+	    </div>
+	</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/lib/devise/controllers/scoped_views.rb:30:in `render_with_scope'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/controllers/devise/sessions_controller.rb:8:in `new'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__2428364963287125932__process_action__1504564461480665762__callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/mapper.rb:35:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed   in 22ms
+
+ActionView::Template::Error (/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...k_to "SignIn/SignUp", url_for :controller => 'devise/session...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting ')'
+...ontroller => 'devise/sessions', :action => 'new');@output_bu...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected keyword_do_block, expecting keyword_end
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				              ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected '|', expecting '='
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				                          ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting $end):
+    19: 				<%if !nil? current_user%>
+    20: 					<p><%=current_user.UserName%></p>
+    21: 				<%else%>
+    22: 					<%=link_to "SignIn/SignUp", url_for :controller => 'devise/sessions', :action => 'new'%>
+    23: 				<%end%>
+    24: 			</div>
+    25: 			<div id="nav" class="grid-2">
+  
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (46.1ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (49.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:52:50 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+ERROR: compiling _app_views_layouts_application_html_erb___3814066237864073386_15510560_2241896291255657602 RAISED /home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting ')'
+...end= (link_to ("SignIn/SignUp", (url_for :controller => 'dev...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+...e/sessions', :action => 'new')));@output_buffer.safe_concat('
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected keyword_do_block, expecting keyword_end
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				              ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected '|', expecting '='
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				                          ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_layouts_application_html_erb___3814066237864073386_15510560_2241896291255657602(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+	<head>
+		<title>');@output_buffer.append= ( content_for?(:title) ? yield(:title) : "Coder's Guild" );@output_buffer.safe_concat('</title>
+		');@output_buffer.append= ( stylesheet_link_tag "application" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( stylesheet_link_tag "grid");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "nav.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( yield(:head) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	</head>
+	<body>
+		<div id="body" class="container-12">
+			<div id="header" class="grid-8 push-2 clearfix">
+				<h1>The Coder\'s Guild;</h1>
+			</div>
+			<div id="userControl" class="right grid-2">
+');				if !nil? current_user
+@output_buffer.safe_concat('					<p>');@output_buffer.append= (current_user.UserName);@output_buffer.safe_concat('</p>
+');				else
+@output_buffer.safe_concat('					');@output_buffer.append= (link_to ("SignIn/SignUp", (url_for :controller => 'devise/sessions', :action => 'new')));@output_buffer.safe_concat('
+');				end
+@output_buffer.safe_concat('			</div>
+			<div id="nav" class="grid-2">
+				');@output_buffer.append= ( render('layouts/nav'));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			</div>
+			<div id="content" class="grid-8">
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :div, msg, :id => "flash_#{name}" );@output_buffer.safe_concat('
+');				 end 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :h1, yield(:title) if show_title? );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			</div>
+			
+            <div id="footer">
+            </div>
+	    </div>
+	</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/lib/devise/controllers/scoped_views.rb:30:in `render_with_scope'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/controllers/devise/sessions_controller.rb:8:in `new'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__2428364963287125932__process_action__1504564461480665762__callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/mapper.rb:35:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed   in 22ms
+
+ActionView::Template::Error (/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting ')'
+...end= (link_to ("SignIn/SignUp", (url_for :controller => 'dev...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+...e/sessions', :action => 'new')));@output_buffer.safe_concat('
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected keyword_do_block, expecting keyword_end
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				              ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected '|', expecting '='
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				                          ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting $end):
+    19: 				<%if !nil? current_user%>
+    20: 					<p><%=current_user.UserName%></p>
+    21: 				<%else%>
+    22: 					<%=link_to ("SignIn/SignUp", (url_for :controller => 'devise/sessions', :action => 'new'))%>
+    23: 				<%end%>
+    24: 			</div>
+    25: 			<div id="nav" class="grid-2">
+  
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (46.1ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (49.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:53:27 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+ERROR: compiling _app_views_layouts_application_html_erb___3814066237864073386_15511420_2241896291255657602 RAISED /home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+...e/sessions', :action => 'new'));@output_buffer.safe_concat('
+...                               ^
+Function body:           def _app_views_layouts_application_html_erb___3814066237864073386_15511420_2241896291255657602(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+	<head>
+		<title>');@output_buffer.append= ( content_for?(:title) ? yield(:title) : "Coder's Guild" );@output_buffer.safe_concat('</title>
+		');@output_buffer.append= ( stylesheet_link_tag "application" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( stylesheet_link_tag "grid");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "nav.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( yield(:head) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	</head>
+	<body>
+		<div id="body" class="container-12">
+			<div id="header" class="grid-8 push-2 clearfix">
+				<h1>The Coder\'s Guild;</h1>
+			</div>
+			<div id="userControl" class="right grid-2">
+');				if !nil? current_user
+@output_buffer.safe_concat('					<p>');@output_buffer.append= (current_user.UserName);@output_buffer.safe_concat('</p>
+');				else
+@output_buffer.safe_concat('					');@output_buffer.append= (url_for :controller => 'devise/sessions', :action => 'new'));@output_buffer.safe_concat('
+');				end
+@output_buffer.safe_concat('			</div>
+			<div id="nav" class="grid-2">
+				');@output_buffer.append= ( render('layouts/nav'));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			</div>
+			<div id="content" class="grid-8">
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :div, msg, :id => "flash_#{name}" );@output_buffer.safe_concat('
+');				 end 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :h1, yield(:title) if show_title? );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			</div>
+			
+            <div id="footer">
+            </div>
+	    </div>
+	</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/lib/devise/controllers/scoped_views.rb:30:in `render_with_scope'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/controllers/devise/sessions_controller.rb:8:in `new'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__2428364963287125932__process_action__1504564461480665762__callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/mapper.rb:35:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed   in 22ms
+
+ActionView::Template::Error (/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+...e/sessions', :action => 'new'));@output_buffer.safe_concat('
+...                               ^):
+    19: 				<%if !nil? current_user%>
+    20: 					<p><%=current_user.UserName%></p>
+    21: 				<%else%>
+    22: 					<%=url_for :controller => 'devise/sessions', :action => 'new')%>
+    23: 				<%end%>
+    24: 			</div>
+    25: 			<div id="nav" class="grid-2">
+  
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (45.5ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (48.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:53:40 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed   in 23ms
+
+ActionView::Template::Error (wrong number of arguments(1 for 0)):
+    16: 				<h1>The Coder's Guild;</h1>
+    17: 			</div>
+    18: 			<div id="userControl" class="right grid-2">
+    19: 				<%if !nil? current_user%>
+    20: 					<p><%=current_user.UserName%></p>
+    21: 				<%else%>
+    22: 					<%=url_for :controller => 'devise/sessions', :action => 'new'%>
+  app/views/layouts/application.html.erb:19:in `nil?'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb___3814066237864073386_15616580_2241896291255657602'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (49.4ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (52.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:54:02 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed   in 23ms
+
+ActionView::Template::Error (wrong number of arguments(1 for 0)):
+    16: 				<h1>The Coder's Guild;</h1>
+    17: 			</div>
+    18: 			<div id="userControl" class="right grid-2">
+    19: 				<%if !nil? current_user then%>
+    20: 					<p><%=current_user.UserName%></p>
+    21: 				<%else%>
+    22: 					<%=url_for :controller => 'devise/sessions', :action => 'new'%>
+  app/views/layouts/application.html.erb:19:in `nil?'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb___3814066237864073386_15514220_2241896291255657602'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (49.0ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (65.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:54:29 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 25ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:54:55 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 27ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:55:00 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+ERROR: compiling _app_views_layouts_application_html_erb___3814066237864073386_16126680_2241896291255657602 RAISED /home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...pend= (link_to "foo", url_for :controller => 'devise/session...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting ')'
+...ontroller => 'devise/sessions', :action => 'new');@output_bu...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected keyword_do_block, expecting keyword_end
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				              ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected '|', expecting '='
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				                          ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_layouts_application_html_erb___3814066237864073386_16126680_2241896291255657602(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+	<head>
+		<title>');@output_buffer.append= ( content_for?(:title) ? yield(:title) : "Coder's Guild" );@output_buffer.safe_concat('</title>
+		');@output_buffer.append= ( stylesheet_link_tag "application" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( stylesheet_link_tag "grid");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "nav.js" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( yield(:head) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	</head>
+	<body>
+		<div id="body" class="container-12">
+			<div id="header" class="grid-8 push-2 clearfix">
+				<h1>The Coder\'s Guild;</h1>
+			</div>
+			<div id="userControl" class="right grid-2">
+');				if ! current_user.nil?
+@output_buffer.safe_concat('					<p>');@output_buffer.append= (current_user.UserName);@output_buffer.safe_concat('</p>
+');				else
+@output_buffer.safe_concat('					');@output_buffer.append= (link_to "foo", url_for :controller => 'devise/sessions', :action => 'new');@output_buffer.safe_concat('
+');				end
+@output_buffer.safe_concat('			</div>
+			<div id="nav" class="grid-2">
+				');@output_buffer.append= ( render('layouts/nav'));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+			</div>
+			<div id="content" class="grid-8">
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :div, msg, :id => "flash_#{name}" );@output_buffer.safe_concat('
+');				 end 
+@output_buffer.safe_concat('				');@output_buffer.append= ( content_tag :h1, yield(:title) if show_title? );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			</div>
+			
+            <div id="footer">
+            </div>
+	    </div>
+	</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/lib/devise/controllers/scoped_views.rb:30:in `render_with_scope'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/controllers/devise/sessions_controller.rb:8:in `new'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__2428364963287125932__process_action__1504564461480665762__callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/mapper.rb:35:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/home/matt/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/matt/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (4.9ms)
+Completed   in 22ms
+
+ActionView::Template::Error (/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...pend= (link_to "foo", url_for :controller => 'devise/session...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:22: syntax error, unexpected ',', expecting ')'
+...ontroller => 'devise/sessions', :action => 'new');@output_bu...
+...                               ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected keyword_do_block, expecting keyword_end
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				              ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:30: syntax error, unexpected '|', expecting '='
+');@output_buffer.append_if_string= 				 flash.each do |name, msg| 
+                                    				                          ^
+/home/matt/rails/coders_guild/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting $end):
+    19: 				<%if ! current_user.nil?%>
+    20: 					<p><%=current_user.UserName%></p>
+    21: 				<%else%>
+    22: 					<%=link_to "foo", url_for :controller => 'devise/sessions', :action => 'new'%>
+    23: 				<%end%>
+    24: 			</div>
+    25: 			<div id="nav" class="grid-2">
+  
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (45.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (49.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:56:02 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 24ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:56:10 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+Rendered layouts/_nav.html.erb (0.5ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 24ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:56:11 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 25ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-03-26 17:56:14 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered tutorials/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 60ms (Views: 12.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:56:15 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 25ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:56:25 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 40ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:57:27 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 41ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:58:19 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 40ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:58:34 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 40ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-03-26 17:58:53 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT "tutorials".* FROM "tutorials"
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered tutorials/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 33ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-26 17:58:57 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.6ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered exercises/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/exercises/1/edit" for 127.0.0.1 at 2011-03-26 17:59:02 -0400
+  Processing by ExercisesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mExercise Load (0.3ms)[0m  [1mSELECT "exercises".* FROM "exercises" WHERE ("exercises"."id" = 1) LIMIT 1[0m
+Rendered exercises/_form.html.erb (14.1ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered exercises/edit.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 54ms (Views: 46.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-03-26 17:59:07 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT "tutorials".* FROM "tutorials"
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered tutorials/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-26 17:59:54 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+Rendered layouts/_nav.html.erb (0.5ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 24ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-03-26 17:59:56 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.1ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/registrations/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 41ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-03-26 18:00:12 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UV0swhew5buxDDouarxODFWKZrxHRR9qZf+yIwHLsUM=", "user"=>{"email"=>"d.p.torrac@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('d.p.torrac@gmail.com')) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "password_salt", "reset_password_token", "remember_token", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at") VALUES ('d.p.torrac@gmail.com', '$2a$10$r6g0ktL0o3FgI4BXjOLKA.FRXVgTxj9aKE83ETWJWkT1YZpN/y8lu', '$2a$10$r6g0ktL0o3FgI4BXjOLKA.', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2011-03-26 22:00:12.290518', '2011-03-26 22:00:12.290518')
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-03-26 22:00:12.297614', "current_sign_in_at" = '2011-03-26 22:00:12.297614', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2011-03-26 22:00:12.297829' WHERE ("users"."id" = 1)[0m
+Redirected to http://localhost:8080/
+Completed 302 Found in 166ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-26 18:00:12 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered home/index.html.erb within layouts/application (38.2ms)
+Completed   in 41ms
+
+ActionView::Template::Error (undefined method `UserName' for #<User:0x00000001e07148>):
+    14: 		<div id="body" class="container-12">
+    15: 			<div id="userControl" class="right grid-2">
+    16: 				<%if ! current_user.nil?%>
+    17: 					<p><%=current_user.UserName%></p>
+    18: 				<%else%>
+    19: 					<%=link_to "Sign In", url_for(:controller => 'devise/sessions', :action => 'new')%>
+    20: 				<%end%>
+  app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___3814066237864073386_17456400_2241896291255657602'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (16.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (46.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (66.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-26 18:00:42 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered home/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-26 18:14:25 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered home/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-03-26 18:14:28 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 34ms (Views: 28.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/new" for 127.0.0.1 at 2011-03-26 18:14:31 -0400
+  Processing by TutorialsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered tutorials/_form.html.erb (26.4ms)
+Rendered layouts/_nav.html.erb (0.5ms)
+Rendered tutorials/new.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 72ms (Views: 48.5ms | ActiveRecord: 0.3ms)
