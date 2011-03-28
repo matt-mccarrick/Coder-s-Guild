@@ -1,0 +1,28 @@
+#navigation {
+	border-right:1px solid #999;
+	padding:10px 0px;
+	width:145px;
+}
+#navigation a  {
+	display:block;
+	background:url(navigation.png);
+	height:47px;
+	text-indent:-9000px;
+}
+#navigation a.link1:hover {background-position:-146px 0px;}
+#navigation a.link2 {background-position:0px -47px;}
+#navigation a.link2:hover {background-position:-146px -47px;}
+#navigation a.link3 {background-position:0px -94px;}
+#navigation a.link3:hover{background-position:-146px -94px;}
+#navigation a.link4 {background-position:0px -141px;}
+#navigation a.link4:hover {background-position:-146px -141px;}
+#navigation a.link5 {background-position:0px -188px;}
+#navigation a.link5:hover {background-position:-146px -188px;}
+#navigation a.link6 {background-position:0px -235px;}
+#navigation a.link6:hover {background-position:-146px -235px;}
+#navigation a.link7 {background-position:0px -282px;}
+#navigation a.link7:hover {background-position:-146px -282px;}
+#navigation a.link8 {background-position:0px -329px;}
+#navigation a.link8:hover {background-position:-146px -329px;}
+#navigation a.link9 {background-position:0px -375px; height:65px;}
+#navigation a.link9:hover {background-position:-146px -375px;}

@@ -5,10 +5,6 @@ body {
 	font-size: 14px;
 }	
 
-a img {
-	border: none;
-}
-
 a {
 	color: #DD7700;
 }
@@ -26,9 +22,14 @@ a:hover{
 }
 
 ul#menu{
-	
+	list-style:none;
 }
+
+ul#menu li{
+	padding-right: 20px;
+	float:left;
 }
+
 
 #content{
 
@@ -36,10 +37,12 @@ ul#menu{
 #header{
 	clear:both;
 	font-family:Courier New, Courier, Arial;
-	font-size: 25px;
+	
 }
 
 #footer{
+	margin-top:20px;
+	background-color: #333;
 	clear:both;
 }
 
@@ -69,7 +72,6 @@ ul#menu{
 }
 .right{
 	float:right !important;
-	clear:both;
 }
 .fieldWithErrors {
 	display: inline;

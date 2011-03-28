@@ -1,13 +1,12 @@
 
-<ul id="#menu">
-	<li>
-		
-		<%#=link_to "Home", :controller => "home"%>
+<ul id="menu" class = "">
+	<li>	
+		<%=link_to "Home", url_for(root_path), :class => "link1"%>
 	</li>
 	<li>
-		<%=link_to "Tutorials" , tutorials_path%>
+		<%=link_to "Tutorials" , url_for(tutorials_path), :class => "link2"%>
 	</li>
 	<li>
-		<%=link_to "Exercises",exercises_path%>
+		<%=link_to "Exercises",url_for(exercises_path), :class => "link3"%>
 	</li>
 </ul>

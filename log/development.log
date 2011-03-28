@@ -1945,3 +1945,532 @@ Rendered tutorials/_form.html.erb (26.4ms)
 Rendered layouts/_nav.html.erb (0.5ms)
 Rendered tutorials/new.html.erb within layouts/application (45.9ms)
 Completed 200 OK in 72ms (Views: 48.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 13:08:29 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (1.1ms)
+Rendered home/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 17ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 13:08:33 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered home/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-03-28 13:08:35 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 66ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 13:08:38 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered home/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 12ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-03-28 13:08:39 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT "tutorials".* FROM "tutorials"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-03-28 13:10:42 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-28 13:15:12 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+Rendered layouts/_nav.html.erb (11.3ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (18.6ms)
+Completed   in 44ms
+
+ActionView::Template::Error (No route matches {:controller=>"devise/home"}):
+    1: 
+    2: <ul id="#menu">
+    3: 	<li>	
+    4: 		<%=link_to "Home", url_for(:controller => "home", :action => "index"), :class => "link1"%>
+    5: 	</li>
+    6: 	<li>
+    7: 		<%=link_to "Tutorials" , tutorials_path, :class => "link2"%>
+  app/views/layouts/_nav.html.erb:4:in `_app_views_layouts__nav_html_erb___1420410863095468817_23214640_875443588105361104'
+  app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__693469731545715829_23741000__2621328370633209928'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (67.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (73.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-28 13:19:01 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+Rendered layouts/_nav.html.erb (0.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (22.9ms)
+Completed   in 40ms
+
+ActionView::Template::Error (No route matches {:controller=>"application/home"}):
+    1: 
+    2: <ul id="#menu">
+    3: 	<li>	
+    4: 		<%=link_to "Home", url_for(:controller => "application/home", :action => "index"), :class => "link1"%>
+    5: 	</li>
+    6: 	<li>
+    7: 		<%=link_to "Tutorials" , tutorials_path, :class => "link2"%>
+  app/views/layouts/_nav.html.erb:4:in `_app_views_layouts__nav_html_erb___1420410863095468817_25111280_875443588105361104'
+  app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__693469731545715829_22935360__2621328370633209928'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (48.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (52.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-03-28 13:23:16 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.0ms)
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 41ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 13:23:19 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered home/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-03-28 13:23:21 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT "tutorials".* FROM "tutorials"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-03-28 13:26:19 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:26:21 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.4ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:39:07 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (17.8ms)
+Rendered exercises/index.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 43ms (Views: 37.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:39:28 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 25ms (Views: 19.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:39:43 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:39:45 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.4ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:39:46 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:39:55 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:42:43 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 41ms (Views: 36.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:43:22 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:43:24 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:44:19 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:44:21 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:44:57 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:45:08 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (16.1ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 41ms (Views: 20.5ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:45:19 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 42ms (Views: 37.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:45:51 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:46:46 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:47:19 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 24ms (Views: 19.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:47:44 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:47:46 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:48:01 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:48:19 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 41ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:49:07 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 41ms (Views: 36.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:49:27 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.4ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:49:52 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.7ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 29ms (Views: 20.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:51:15 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:51:28 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:52:14 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:52:16 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:52:28 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 42ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:52:29 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.4ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/index.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:52:35 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:52:36 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (17.5ms)
+Rendered exercises/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 42ms (Views: 36.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:52:45 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:53:15 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 25ms (Views: 19.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:53:49 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:53:50 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 24ms (Views: 19.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:53:57 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:54:38 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:55:15 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 42ms (Views: 36.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 13:55:30 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/index.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 42ms (Views: 37.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 14:02:13 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.4ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/index.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-03-28 14:02:15 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 14:02:38 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered home/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 6ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 14:02:58 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered home/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 14:03:31 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered home/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 14:03:49 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered home/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 14:10:32 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered home/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 12ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 14:10:52 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered home/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 14:11:08 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered home/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 14:11:18 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered home/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 27ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-28 14:11:23 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered home/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 12ms (Views: 12.3ms | ActiveRecord: 0.0ms)
