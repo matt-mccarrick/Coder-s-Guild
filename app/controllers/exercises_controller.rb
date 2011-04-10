@@ -13,8 +13,7 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = Exercise.new(params[:exercise])
-    @exercise.created_by = 1
+    @exercise = current_user.exercises.create(params[:exercise])
     
     if @exercise.save
       flash[:notice] = "Successfully created exercise."
@@ -43,5 +42,27 @@ class ExercisesController < ApplicationController
     @exercise.destroy
     flash[:notice] = "Successfully destroyed exercise."
     redirect_to exercises_url
+  end
+  
+  def upvote
+		@exercise = Exercise.find(params[:id])
+		@exercise.upvotes ++
+		if(@exercise.save)
+			flash[:notice] = "Successfully upvoted"
+			redirect_to exercises-url
+		else
+			redirect_to exercises-url
+		end
+  end
+  
+  def downvote
+		@exercise = Exercise.find(params[:id])
+		@exercise.downvotes ++
+		if(@exercise.save)
+			flash[:notice] = "Successfully upvoted"
+			redirect_to exercises-url
+		else
+			redirect_to exercises-url
+		end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110312033526) do
+ActiveRecord::Schema.define(:version => 20110410195206) do
 
   create_table "exercises", :force => true do |t|
     t.integer  "created_by"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20110312033526) do
     t.integer  "downvotes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "tutorials", :force => true do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110312033526) do
     t.integer  "downvotes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20110312033526) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "userName"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

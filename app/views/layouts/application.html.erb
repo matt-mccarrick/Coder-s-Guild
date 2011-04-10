@@ -29,7 +29,7 @@
 			</div>
 			
 			
-			<div id="content" class="grid-8 right">
+			<div id="content" class="grid-8 push-2">
 				<% flash.each do |name, msg| %>
 				<%= content_tag :div, msg, :id => "flash_#{name}" %>
 				<% end %>

@@ -2500,3 +2500,880 @@ Migrating to DeviseCreateUsers (20110312033526)
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
   [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTutorials (20110118023519)
+Migrating to CreateExercises (20110122214952)
+Migrating to DeviseCreateUsers (20110312033526)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("exercises")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tutorials")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-10 14:40:42 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (1.2ms)
+Rendered home/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 14:40:46 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (0.6ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 59ms (Views: 16.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-04-10 14:40:48 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 51ms (Views: 41.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-10 14:40:50 -0400
+  Processing by HomeController#index as HTML
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered home/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-04-10 14:40:53 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (1.6ms)
+Rendered layouts/_nav.html.erb (1.2ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 39ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 14:40:55 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-04-10 14:40:56 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[35mExercise Load (0.5ms)[0m  SELECT "exercises".* FROM "exercises"
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered exercises/index.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 45ms (Views: 39.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 14:44:03 -0400
+  Processing by TutorialsController#index as HTML
+Completed   in 8ms
+
+NoMethodError (undefined method `tutorials' for nil:NilClass):
+  app/controllers/tutorials_controller.rb:4:in `index'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (46.1ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.9ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 14:46:13 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 21ms (Views: 6.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-04-10 14:46:46 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/devise-1.1.8/app/views/devise/sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 27ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-04-10 14:46:53 -0400
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVAP0mwRyMU4KdPg33oK+dmJhuvp1S7aHecaAumeX9Y=", "user"=>{"email"=>"d.p.torrac@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'd.p.torrac@gmail.com') LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2011-04-10 18:46:53.573038', "sign_in_count" = 2, "updated_at" = '2011-04-10 18:46:53.573418' WHERE ("users"."id" = 1)
+Redirected to http://localhost:3000/
+Completed 302 Found in 203ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-10 14:46:53 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered home/index.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 14:46:57 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mTutorial Load (0.2ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials".user_id = 1)[0m
+SQLite3::SQLException: no such column: tutorials.user_id: SELECT "tutorials".* FROM "tutorials" WHERE ("tutorials".user_id = 1)
+Rendered tutorials/index.html.erb within layouts/application (12.1ms)
+Completed   in 56ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: tutorials.user_id: SELECT "tutorials".* FROM "tutorials" WHERE ("tutorials".user_id = 1)):
+    8:     <th>Upvotes</th>
+    9:     <th>Downvotes</th>
+    10:   </tr>
+    11:   <% for tutorial in @tutorials %>
+    12:     <tr>
+    13:       <td><%= tutorial.created_by %></td>
+    14:       <td><%= tutorial.title %></td>
+  app/views/tutorials/index.html.erb:11:in `_app_views_tutorials_index_html_erb__359645085160386597_32539080__1163656454694440664'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT "tutorials".* FROM "tutorials" WHERE ("tutorials".user_id = 1)
+SQLite3::SQLException: no such column: tutorials.user_id: SELECT "tutorials".* FROM "tutorials" WHERE ("tutorials".user_id = 1)
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials".user_id = 1)[0m
+SQLite3::SQLException: no such column: tutorials.user_id: SELECT "tutorials".* FROM "tutorials" WHERE ("tutorials".user_id = 1)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (21.9ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (28.0ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTutorials (20110118023519)
+Migrating to CreateExercises (20110122214952)
+Migrating to DeviseCreateUsers (20110312033526)
+Migrating to AddUserForeignKeys (20110410185001)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "exercises" ADD "user_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "tutorials" ADD "user_id" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110410185001')[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("exercises")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("tutorials")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 14:55:37 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials".user_id = 1)[0m
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 33ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTutorials (20110118023519)
+Migrating to CreateExercises (20110122214952)
+Migrating to DeviseCreateUsers (20110312033526)
+Migrating to AddUserForeignKeys (20110410185001)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("exercises")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tutorials")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 14:57:22 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT "tutorials".* FROM "tutorials"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (1.0ms)
+Rendered tutorials/index.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 14:57:26 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT "tutorials".* FROM "tutorials"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 50ms (Views: 44.2ms | ActiveRecord: 0.8ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTutorials (20110118023519)
+Migrating to CreateExercises (20110122214952)
+Migrating to DeviseCreateUsers (20110312033526)
+Migrating to AddUserForeignKeys (20110410185001)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("exercises")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tutorials")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 15:03:24 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT "tutorials".* FROM "tutorials"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/index.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 51ms (Views: 45.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/new" for 127.0.0.1 at 2011-04-10 15:03:28 -0400
+  Processing by TutorialsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered tutorials/_form.html.erb (10.6ms)
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 56ms (Views: 29.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/tutorials" for 127.0.0.1 at 2011-04-10 15:03:54 -0400
+  Processing by TutorialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVAP0mwRyMU4KdPg33oK+dmJhuvp1S7aHecaAumeX9Y=", "tutorial"=>{"created_by"=>"This section", "title"=>"AN AWESOME TITLE", "article"=>"Foodoea\r\nalkgn"}, "commit"=>"Create Tutorial"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "tutorials" ("created_by", "section", "title", "article", "upvotes", "downvotes", "created_at", "updated_at", "user_id") VALUES (0, NULL, 'AN AWESOME TITLE', 'Foodoea
+alkgn', NULL, NULL, '2011-04-10 19:03:54.499819', '2011-04-10 19:03:54.499819', 1)
+Completed   in 57ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/tutorials_controller.rb:22:in `create'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (50.6ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (54.1ms)
+
+
+Started POST "/tutorials" for 127.0.0.1 at 2011-04-10 15:04:40 -0400
+  Processing by TutorialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVAP0mwRyMU4KdPg33oK+dmJhuvp1S7aHecaAumeX9Y=", "tutorial"=>{"created_by"=>"This section", "title"=>"AN AWESOME TITLE", "article"=>"Foodoea\r\nalkgn"}, "commit"=>"Create Tutorial"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.9ms)[0m  INSERT INTO "tutorials" ("created_by", "section", "title", "article", "upvotes", "downvotes", "created_at", "updated_at", "user_id") VALUES (NULL, NULL, NULL, NULL, NULL, NULL, '2011-04-10 19:04:40.794072', '2011-04-10 19:04:40.794072', 1)
+Completed   in 74ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/tutorials_controller.rb:22:in `create'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (52.1ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (55.7ms)
+
+
+Started POST "/tutorials" for 127.0.0.1 at 2011-04-10 15:05:33 -0400
+  Processing by TutorialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVAP0mwRyMU4KdPg33oK+dmJhuvp1S7aHecaAumeX9Y=", "tutorial"=>{"created_by"=>"This section", "title"=>"AN AWESOME TITLE", "article"=>"Foodoea\r\nalkgn"}, "commit"=>"Create Tutorial"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "tutorials" ("created_by", "section", "title", "article", "upvotes", "downvotes", "created_at", "updated_at", "user_id") VALUES (0, NULL, 'AN AWESOME TITLE', 'Foodoea
+alkgn', NULL, NULL, '2011-04-10 19:05:33.878102', '2011-04-10 19:05:33.878102', 1)
+Completed   in 59ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/tutorials_controller.rb:22:in `create'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (52.2ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (56.0ms)
+
+
+Started POST "/tutorials" for 127.0.0.1 at 2011-04-10 15:06:59 -0400
+  Processing by TutorialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVAP0mwRyMU4KdPg33oK+dmJhuvp1S7aHecaAumeX9Y=", "tutorial"=>{"created_by"=>"This section", "title"=>"AN AWESOME TITLE", "article"=>"Foodoea\r\nalkgn"}, "commit"=>"Create Tutorial"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "tutorials" ("created_by", "section", "title", "article", "upvotes", "downvotes", "created_at", "updated_at", "user_id") VALUES (0, NULL, 'AN AWESOME TITLE', 'Foodoea
+alkgn', NULL, NULL, '2011-04-10 19:06:59.169876', '2011-04-10 19:06:59.169876', 1)
+Completed   in 62ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/tutorials_controller.rb:26:in `create'
+
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (51.5ms)
+Rendered /home/matt/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (55.1ms)
+
+
+Started POST "/tutorials" for 127.0.0.1 at 2011-04-10 15:09:35 -0400
+  Processing by TutorialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVAP0mwRyMU4KdPg33oK+dmJhuvp1S7aHecaAumeX9Y=", "tutorial"=>{"created_by"=>"This section", "title"=>"AN AWESOME TITLE", "article"=>"Foodoea\r\nalkgn"}, "commit"=>"Create Tutorial"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "tutorials" ("created_by", "section", "title", "article", "upvotes", "downvotes", "created_at", "updated_at", "user_id") VALUES (0, NULL, 'AN AWESOME TITLE', 'Foodoea
+alkgn', NULL, NULL, '2011-04-10 19:09:35.774685', '2011-04-10 19:09:35.774685', 1)
+Redirected to http://localhost:3000/tutorials/6
+Completed 302 Found in 60ms
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:09:35 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 85ms (Views: 76.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 15:10:16 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (1.6ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/index.html.erb within layouts/application (53.8ms)
+Completed 200 OK in 63ms (Views: 55.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/tutorials/new.6" for 127.0.0.1 at 2011-04-10 15:10:18 -0400
+  Processing by TutorialsController#new as 
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered tutorials/_form.html.erb (6.6ms)
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 45ms (Views: 18.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tutorials/2" for 127.0.0.1 at 2011-04-10 15:10:28 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTutorial Load (0.4ms)[0m  SELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 61ms (Views: 52.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/2" for 127.0.0.1 at 2011-04-10 15:10:30 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTutorial Load (0.6ms)[0m  SELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 60ms (Views: 35.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tutorials/2" for 127.0.0.1 at 2011-04-10 15:10:34 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (50.5ms)
+Completed 200 OK in 61ms (Views: 52.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/2" for 127.0.0.1 at 2011-04-10 15:10:35 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTutorial Load (0.6ms)[0m  SELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 59ms (Views: 34.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 15:10:37 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[35mTutorial Load (1.7ms)[0m  SELECT "tutorials".* FROM "tutorials"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/index.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 64ms (Views: 56.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/tutorials/new.6" for 127.0.0.1 at 2011-04-10 15:10:42 -0400
+  Processing by TutorialsController#new as 
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered tutorials/_form.html.erb (6.6ms)
+Rendered layouts/_nav.html.erb (0.7ms)
+Rendered tutorials/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 62ms (Views: 18.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/tutorials" for 127.0.0.1 at 2011-04-10 15:10:52 -0400
+  Processing by TutorialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVAP0mwRyMU4KdPg33oK+dmJhuvp1S7aHecaAumeX9Y=", "tutorial"=>{"created_by"=>"f", "title"=>"Delete me", "article"=>"Foo"}, "commit"=>"Create Tutorial"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "tutorials" ("created_by", "section", "title", "article", "upvotes", "downvotes", "created_at", "updated_at", "user_id") VALUES (0, NULL, 'Delete me', 'Foo', NULL, NULL, '2011-04-10 19:10:52.775060', '2011-04-10 19:10:52.775060', 1)
+Redirected to http://localhost:3000/tutorials/7
+Completed 302 Found in 60ms
+
+
+Started GET "/tutorials/7" for 127.0.0.1 at 2011-04-10 15:10:52 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (57.9ms)
+Completed 200 OK in 69ms (Views: 60.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 15:10:58 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (1.8ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/index.html.erb within layouts/application (54.8ms)
+Completed 200 OK in 81ms (Views: 57.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2011-04-10 15:13:14 -0400
+  Processing by TutorialsController#index as HTML
+  [1m[36mTutorial Load (2.0ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/index.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 64ms (Views: 56.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:13:17 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 61ms (Views: 52.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:13:20 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.5ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 63ms (Views: 54.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:13:21 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:13:22 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 62ms (Views: 52.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:13:26 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 60ms (Views: 51.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:13:34 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 59ms (Views: 51.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:14:26 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (1.0ms)
+Rendered tutorials/show.html.erb within layouts/application (50.6ms)
+Completed 200 OK in 62ms (Views: 52.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:14:28 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (50.4ms)
+Completed 200 OK in 61ms (Views: 52.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:14:30 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 60ms (Views: 51.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:15:36 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 60ms (Views: 51.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:15:38 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:15:39 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 63ms (Views: 53.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:15:40 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (52.8ms)
+Completed 200 OK in 63ms (Views: 54.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:15:54 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 61ms (Views: 52.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:15:56 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 60ms (Views: 51.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:15:57 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 60ms (Views: 51.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:15:58 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (49.2ms)
+Completed 200 OK in 60ms (Views: 51.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:16:27 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 63ms (Views: 54.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:16:29 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 59ms (Views: 50.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:16:30 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 59ms (Views: 51.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:16:30 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 62ms (Views: 53.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:16:31 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 61ms (Views: 51.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:16:54 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 59ms (Views: 51.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:16:56 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 63ms (Views: 54.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:16:57 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.3ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered tutorials/show.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 59ms (Views: 50.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/6" for 127.0.0.1 at 2011-04-10 15:16:58 -0400
+  Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTutorial Load (0.4ms)[0m  [1mSELECT "tutorials".* FROM "tutorials" WHERE ("tutorials"."id" = 6) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered tutorials/show.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 61ms (Views: 52.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-04-10 15:18:30 -0400
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (0.5ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/index.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 58ms (Views: 52.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/exercises/new.1" for 127.0.0.1 at 2011-04-10 15:18:32 -0400
+  Processing by ExercisesController#new as 
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered exercises/_form.html.erb (11.6ms)
+Rendered layouts/_nav.html.erb (1.2ms)
+Rendered exercises/new.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 91ms (Views: 45.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/exercises" for 127.0.0.1 at 2011-04-10 15:18:46 -0400
+  Processing by ExercisesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVAP0mwRyMU4KdPg33oK+dmJhuvp1S7aHecaAumeX9Y=", "exercise"=>{"section"=>"Testing", "title"=>"fooodayedtof", "article"=>"alikgh laitkhld dejf fjdher ,y fhagfi."}, "commit"=>"Create Exercise"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mAREL (1.1ms)[0m  [1mINSERT INTO "exercises" ("created_by", "section", "title", "article", "upvotes", "downvotes", "created_at", "updated_at", "user_id") VALUES (NULL, 'Testing', 'fooodayedtof', 'alikgh laitkhld dejf fjdher ,y fhagfi.', NULL, NULL, '2011-04-10 19:18:46.488746', '2011-04-10 19:18:46.488746', 1)[0m
+Redirected to http://localhost:3000/exercises/2
+Completed 302 Found in 60ms
+
+
+Started GET "/exercises/2" for 127.0.0.1 at 2011-04-10 15:18:46 -0400
+  Processing by ExercisesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mExercise Load (0.4ms)[0m  SELECT "exercises".* FROM "exercises" WHERE ("exercises"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/show.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 62ms (Views: 53.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/exercises/2" for 127.0.0.1 at 2011-04-10 15:19:34 -0400
+  Processing by ExercisesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mExercise Load (0.3ms)[0m  SELECT "exercises".* FROM "exercises" WHERE ("exercises"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/show.html.erb within layouts/application (50.5ms)
+Completed 200 OK in 78ms (Views: 52.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/exercises/2" for 127.0.0.1 at 2011-04-10 15:20:25 -0400
+  Processing by ExercisesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mExercise Load (0.4ms)[0m  SELECT "exercises".* FROM "exercises" WHERE ("exercises"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered exercises/show.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 61ms (Views: 52.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/exercises/2" for 127.0.0.1 at 2011-04-10 15:21:04 -0400
+  Processing by ExercisesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mExercise Load (0.4ms)[0m  SELECT "exercises".* FROM "exercises" WHERE ("exercises"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/show.html.erb within layouts/application (50.6ms)
+Completed 200 OK in 61ms (Views: 52.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/exercises/2" for 127.0.0.1 at 2011-04-10 15:21:41 -0400
+  Processing by ExercisesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mExercise Load (0.3ms)[0m  SELECT "exercises".* FROM "exercises" WHERE ("exercises"."id" = 2) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.8ms)
+Rendered exercises/show.html.erb within layouts/application (50.5ms)
+Completed 200 OK in 61ms (Views: 52.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/exercises/2" for 127.0.0.1 at 2011-04-10 15:22:38 -0400
+  Processing by ExercisesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mExercise Load (0.4ms)[0m  SELECT "exercises".* FROM "exercises" WHERE ("exercises"."id" = 2) LIMIT 1
+  [1m[36mUser Load (16.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_nav.html.erb (0.9ms)
+Rendered exercises/show.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 61ms (Views: 36.9ms | ActiveRecord: 16.6ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTutorials (20110118023519)
+Migrating to CreateExercises (20110122214952)
+Migrating to DeviseCreateUsers (20110312033526)
+Migrating to AddUserForeignKeys (20110410185001)
+Migrating to AddUserName (20110410195206)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTutorials (20110118023519)
+Migrating to CreateExercises (20110122214952)
+Migrating to DeviseCreateUsers (20110312033526)
+Migrating to AddUserForeignKeys (20110410185001)
+Migrating to AddUserName (20110410195206)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "users" ADD "userName" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110410195206')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("exercises")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tutorials")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')

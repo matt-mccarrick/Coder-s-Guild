@@ -70,9 +70,13 @@ ul#menu li{
 	background-color: #FCC;
 	border: solid 1px #C66;
 }
+.left{
+	float:left !important;
+}
 .right{
 	float:right !important;
 }
+
 .fieldWithErrors {
 	display: inline;
 }

@@ -7,6 +7,7 @@ class CreateTutorials < ActiveRecord::Migration
       t.text :article
       t.integer :upvotes, :default => 0
       t.integer :downvotes, :default => 0
+      t.integer :user_id
       t.timestamps
     end
   end
