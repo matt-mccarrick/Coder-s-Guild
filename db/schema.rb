@@ -10,18 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110410195206) do
+ActiveRecord::Schema.define(:version => 20110312033526) do
 
   create_table "exercises", :force => true do |t|
     t.integer  "created_by"
     t.string   "section"
     t.string   "title"
     t.text     "article"
-    t.integer  "upvotes"
-    t.integer  "downvotes"
+    t.integer  "upvotes",    :default => 0
+    t.integer  "downvotes",  :default => 0
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "tutorials", :force => true do |t|
@@ -29,11 +29,11 @@ ActiveRecord::Schema.define(:version => 20110410195206) do
     t.string   "section"
     t.string   "title"
     t.text     "article"
-    t.integer  "upvotes"
-    t.integer  "downvotes"
+    t.integer  "upvotes",    :default => 0
+    t.integer  "downvotes",  :default => 0
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
@@ -48,12 +48,13 @@ ActiveRecord::Schema.define(:version => 20110410195206) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "userName"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "userName"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["userName"], :name => "index_users_on_userName", :unique => true
 
 end

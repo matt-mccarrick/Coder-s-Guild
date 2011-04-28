@@ -4,7 +4,10 @@ CodersGuild::Application.routes.draw do
   resources :exercises
 
   resources :tutorials 
-  
+  match 'exercises/upvote/:id' => 'exercises#upvote'
+  match 'exercises/downvote/:id' => 'exercises#downvote'
+  match 'tutorials/upvote/:id' => 'tutorials#upvote'
+  match 'tutorials/downvote/:id' => 'tutorials#downvote'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

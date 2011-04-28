@@ -46,23 +46,23 @@ class ExercisesController < ApplicationController
   
   def upvote
 		@exercise = Exercise.find(params[:id])
-		@exercise.upvotes ++
+		@exercise.upvotes+=1
 		if(@exercise.save)
 			flash[:notice] = "Successfully upvoted"
-			redirect_to exercises-url
+			redirect_to exercises_url
 		else
-			redirect_to exercises-url
+			redirect_to exercises_url
 		end
   end
   
   def downvote
 		@exercise = Exercise.find(params[:id])
-		@exercise.downvotes ++
+		@exercise.downvotes+=1
 		if(@exercise.save)
-			flash[:notice] = "Successfully upvoted"
-			redirect_to exercises-url
+			flash[:notice] = "Successfully downvoted"
+			redirect_to exercises_url
 		else
-			redirect_to exercises-url
+			redirect_to exercises_url
 		end
   end
 end

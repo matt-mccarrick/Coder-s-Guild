@@ -17,8 +17,8 @@ a:hover{
 }
 
 #nav{
-	clear:both;
-	display:block;
+	
+	
 }
 
 ul#menu{
@@ -37,7 +37,7 @@ ul#menu li{
 #header{
 	clear:both;
 	font-family:Courier New, Courier, Arial;
-	
+	border:solid, 1px, #ccc;
 }
 
 #footer{
@@ -72,11 +72,16 @@ ul#menu li{
 }
 .left{
 	float:left !important;
+	clear:both;
 }
 .right{
 	float:right !important;
 }
-
+.entry{
+	padding-top:12px;
+	padding-bottom:12px;
+	border-bottom:1px solid #ccc
+}
 .fieldWithErrors {
 	display: inline;
 }

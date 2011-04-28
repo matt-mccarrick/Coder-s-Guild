@@ -36,6 +36,7 @@ class TutorialsController < ApplicationController
 
   def update
     @tutorial = Tutorial.find(params[:id])
+    @user = User.new
     if @tutorial.update_attributes(params[:tutorial])
       flash[:notice] = "Successfully updated tutorial."
       redirect_to tutorial_url
@@ -52,24 +53,24 @@ class TutorialsController < ApplicationController
   end
   
   def upvote
-		@tutorial = Exercise.find(params[:id])
-		@tutorial.upvotes ++
+		@tutorial = Tutorial.find(params[:id])
+		@tutorial.upvotes+=1
 		if(@tutorial.save)
 			flash[:notice] = "Successfully upvoted"
-			redirect_to tutorials-url
+			redirect_to tutorials_url
 		else
-			redirect_to tutorials-url
+			redirect_to tutorials_url
 		end
   end
   
   def downvote
-		@tutorial = Exercise.find(params[:id])
-		@tutorial.downvotes ++
+		@tutorial = Tutorial.find(params[:id])
+		@tutorial.downvotes+=1
 		if(@tutorial.save)
-			flash[:notice] = "Successfully upvoted"
-			redirect_to tutorials-url
+			flash[:notice] = "Successfully downvoted"
+			redirect_to tutorials_url
 		else
-			redirect_to tutorials-url
+			redirect_to tutorials_url
 		end
   end
 end

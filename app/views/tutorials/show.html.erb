@@ -12,13 +12,10 @@
   <strong>Article:</strong>
   <%= @tutorial.article %>
 </p>
-<p>
-  <strong>Upvotes:</strong>
-  <%= @tutorial.upvotes %>
-</p>
-<p>
-  <strong>Downvotes:</strong>
-  <%= @tutorial.downvotes %>
+<p class="">
+				<%=link_to "Up", "upvote/"+@tutorial.id.to_s %>
+				<%=@tutorial.upvotes - @tutorial.downvotes%>
+				<%=link_to "Down", "downvote/"+@tutorial.id.to_s %>
 </p>
 
 <p>

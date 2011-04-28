@@ -1,9 +1,32 @@
 <% title "Exercises" %>
+<% for exercise in @exercises %>
+	
+		<div class="grid-8">
+			<h3><%=exercise.title%></h3>
+			
+			<p class="">
+				<%=link_to "Up", "exercises/upvote/"+exercise.id.to_s %>
+				<%=exercise.upvotes - exercise.downvotes%>
+				<%=link_to "Down", "exercises/downvote/"+exercise.id.to_s %>
+			</p>
+		
+		<%#
+		<div>
+			<p>exercise.article</p>
+		</div>
+		%>
+		
+			<%= link_to "Show", exercise %></td>
+			<hr/>
+		</div>
+		
+	
+<%end%>
 
-<table>
+
+
+<!--<table>
   <tr>
-    <th>Created By</th>
-    <th>Section</th>
     <th>Title</th>
     <th>Article</th>
     <th>Upvotes</th>
@@ -11,17 +34,19 @@
   </tr>
   <% for exercise in @exercises %>
     <tr>
-      <td><%= exercise.created_by %></td>
-      <td><%= exercise.section %></td>
       <td><%= exercise.title %></td>
       <td><%= exercise.article %></td>
       <td><%= exercise.upvotes %></td>
       <td><%= exercise.downvotes %></td>
       <td><%= link_to "Show", exercise %></td>
-      <td><%= link_to "Edit", edit_exercise_path(exercise) %></td>
-      <td><%= link_to "Destroy", exercise, :confirm => 'Are you sure?', :method => :delete %></td>
+	  <%if !current_user.nil?%>
+			<%if exercise.user_id == current_user.id%>
+				<td><%= link_to "Edit", edit_exercise_path(exercise) %></td>
+				<td><%= link_to "Destroy", exercise, :confirm => 'Are you sure?', :method => :delete %></td>
+			<%end%>
+		<%end%>
     </tr>
   <% end %>
-</table>
+</table>-->
 
-<p><%= link_to "New Exercise", new_exercise_path(exercise) %></p>
+<p><%= link_to "New Tutorial", new_exercise_path(exercise) %></p>

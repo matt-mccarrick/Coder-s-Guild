@@ -16,13 +16,10 @@
   <strong>Article:</strong>
   <%= @exercise.article %>
 </p>
-<p>
-  <strong>Upvotes:</strong>
-  <%= @exercise.upvotes %>
-</p>
-<p>
-  <strong>Downvotes:</strong>
-  <%= @exercise.downvotes %>
+<p class="">
+				<%=link_to "Up", "upvote/"+@exercise.id.to_s %>
+				<%=@exercise.upvotes - @exercise.downvotes%>
+				<%=link_to "Down", "downvote/"+@exercise.id.to_s %>
 </p>
 
 <p>
